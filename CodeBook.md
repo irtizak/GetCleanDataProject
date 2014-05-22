@@ -5,7 +5,7 @@
 
 This CodeBook is not only a guide to describe the variables and data used in this project, but also explains the transformations performed on the data to make it ready for data analysis.
 
-The intention for writing this document is to clearly explain the entire process of collecting, working and cleaning the data, of which the resulting dataset is provided in the pertaining GitHub repository named ['*tidydata.txt*'](https://github.com/irtizak/GetCleanDataProject/blob/master/tidydata.txt). For any further details that you may not be able to find here, kindly refer to the ['*Readme file*'](https://github.com/irtizak/GetCleanDataProject/blob/master/README.md) provided in the same GitHub repository.
+The intention for writing this document is to clearly explain the entire process of collecting, working and cleaning the data, of which the resulting dataset is provided in the pertaining GitHub repository named ['*tidydata.txt*'](https://github.com/irtizak/GetCleanDataProject/blob/master/tidyset.txt). For any further details that you may not be able to find here, kindly refer to the ['*Readme file*'](https://github.com/irtizak/GetCleanDataProject/blob/master/Readme.md) provided in the same GitHub repository.
 
 
 ## Data Source
@@ -26,7 +26,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-### What is required is to creat an R Script called 'run_analysis.R' that does the following:
+### What is required is to create an R Script called 'run_analysis.R' that does the following:
 - Merges the training and the test sets to create one data set.
 - Extracts only the measurements on the mean and standard deviation for each measurement. 
 - Uses descriptive activity names to name the activities in the data set
@@ -45,30 +45,30 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 'XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-*timeBodyAccelerometerXYZ
-*timeGravityAccelerometerXYZ
-*timeBodyAccelerometerJerkXYZ
-*timeBodyGyroscopeXYZ
-*timeBodyGyroscopeJerkXYZ
-*timeBodyAccelerometerMagnitude
-*timeGravityAccelerometerMagnitude
-*timeBodyAccelerometerJerkMagnitude
-*timeBodyGyroscopeMagnitude
-*timeBodyGyroscopeJerkMagnitude
-*frequencyBodyAccelerometerXYZ
-*frequencyBodyAccelerometerJerkXYZ
-*frequencyBodyGyroscopeXYZ
-*frequencyBodyAccelerometerMagnitude
-*frequencyBodyAccelerometerJerkMagnitude
-*frequencyBodyGyroscopeMagnitude
-*frequencyBodyGyroscopeJerkMagnitude
+- timeBodyAccelerometerXYZ
+- timeGravityAccelerometerXYZ
+- timeBodyAccelerometerJerkXYZ
+- timeBodyGyroscopeXYZ
+- timeBodyGyroscopeJerkXYZ
+- timeBodyAccelerometerMagnitude
+- timeGravityAccelerometerMagnitude
+- timeBodyAccelerometerJerkMagnitude
+- timeBodyGyroscopeMagnitude
+- timeBodyGyroscopeJerkMagnitude
+- frequencyBodyAccelerometerXYZ
+- frequencyBodyAccelerometerJerkXYZ
+- frequencyBodyGyroscopeXYZ
+- frequencyBodyAccelerometerMagnitude
+- frequencyBodyAccelerometerJerkMagnitude
+- frequencyBodyGyroscopeMagnitude
+- frequencyBodyGyroscopeJerkMagnitude
 
 _NOTE: We will later see in the 'Process' section how the above mentioned variables were derived from the original dataset._
 
 The set of variables that were extracted from the original dataset are:
 
-*mean: Mean value
-*std: Standard deviation
+- mean: Mean value
+- std: Standard deviation
 
 The complete list of variables can be viewed in the original [dataset zip file](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
@@ -162,7 +162,7 @@ names(extMeanStd)[2] <- "activity"
 
 ### Use descriptive activity names to name activities
 
-In this task, the activity names and their respective IDs are loaded...
+In this task, the activity names and their respective IDs are loaded from the original source files...
 
 ```r
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
@@ -190,7 +190,7 @@ Since the variable names are not elaborative and do not tell much about the data
 
 The renaming is done by expanding the abbreviations...
 
-**_NOTE: The Readme file provided with the [source dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and the 3^rd section in this document encapsulates details through which the aforementioned abbreviations have been inferred and elaborated upon.
+**_NOTE: The Readme file provided with the [source dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and the 3^rd section in this document encapsulates details through which the aforementioned abbreviations have been inferred and elaborated upon._**
 
 ```r
 # Replace 't' with 'time'
