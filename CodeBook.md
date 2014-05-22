@@ -190,7 +190,7 @@ Since the variable names are not elaborative and do not tell much about the data
 
 The renaming is done by expanding the abbreviations...
 
-**_NOTE: The Readme file provided with the [source dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and the 3^rd section in this document encapsulates details through which the aforementioned abbreviations have been inferred and elaborated upon._**
+**_NOTE: The Readme file provided with the [source dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and the 3rd section in this document encapsulates details through which the aforementioned abbreviations have been inferred and elaborated upon._**
 
 ```r
 # Replace 't' with 'time'
